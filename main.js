@@ -206,10 +206,19 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     modalTitle.textContent = "Legal Notice";
     modalBody.innerHTML = `
-      <h4>Identification</h4>
-      <p>ASOCIACION ESTUDIANTIL JUNIOR NEXIO<br>NIF: G75579508<br>Address: PS/ URIBITARTE, 6 48001 BILBAO (BIZKAIA)<br>Registry: AS/B/26060/2025</p>
+      <p>Welcome to the website of ASOCIACION ESTUDIANTIL JUNIOR NEXIO (hereinafter NEXIO) with Tax Identification Number G75579508 and address at PS/ URIBITARTE, 6 48001 BILBAO (BIZKAIA). Contact by mail at contact@team-nexio.com and registered in the Registry of Associations of Bizkaia with the number AS/B/26060/2025.</p>
+      
       <h4>Intellectual Property</h4>
-      <p>The contents of this website (texts, images, animations, graphic design) are protected by Spanish legislation. Reproduction or distribution is prohibited without express authorization.</p>
+      <p>The contents of this website, texts, images, sounds, animations, etc. as well as its graphic design and its source code are protected by Spanish legislation on intellectual and industrial property rights in favor of the companies that make up NEXIO. It is therefore prohibited its reproduction, distribution or public communication, totally or partially, without the express authorization of NEXIO.</p>
+
+      <h4>Web content and links</h4>
+      <p>At NEXIO we are not responsible for the misuse made of the contents of our website, being exclusive responsibility of the person who accesses them or uses them. We neither assume responsibility for the information contained on the third party´s web pages that can be accessed by links or search engines from this Web site.</p>
+
+      <h4>Update and modification of the website</h4>
+      <p>NEXIO, reserves the right to modify or remove, without prior notice, both the information contained on your website and its configuration and presentation, without assuming any responsibility for it.</p>
+
+      <h4>Indications on technical aspects</h4>
+      <p>NEXIO assumes no responsibility that can be derived from technical problems or failures in computer equipment that occur during connection to the Internet network, as well as damages that could be caused by third parties through illegitimate intrusions outside the control of NEXIO. We are also exempt from any responsibility for possible damages that the user may suffer as a result of errors, defects or omissions in the information we provide when coming from sources outside us.</p>
     `;
     modal.style.display = "block";
   });
@@ -218,12 +227,24 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     modalTitle.textContent = "Privacy Policy";
     modalBody.innerHTML = `
-      <h4>Data Controller</h4>
-      <p>Asociación Estudiantil Junior Empresa NEXIO<br>NIF: G75579508<br>Email: contact@team-nexio.com</p>
-      <h4>Purposes</h4>
-      <p>We process data for Member Management, Events, and Accountability under GDPR Art. 6.1.</p>
+      <h4>Identification of the data controller</h4>
+      <p>Asociación Estudiantil Junior Empresa NEXIO (hereinafter “NEXIO”) with NIF ID G75579508 and domicile in Paseo Uribitarte 6, 48001 Bilbao (Bizkaia). Contact: contact@team-nexio.com</p>
+
+      <h4>Purpose and Legitimacy</h4>
+      <p>NEXIO processes personal data for the following purposes:</p>
+      <ul>
+        <li><strong>MEMBERS:</strong> Management of personal data of members (Art. 6.1 b GDPR).</li>
+        <li><strong>CONTACT PEOPLE:</strong> Management of the contacts database (Art. 6.1 f GDPR).</li>
+        <li><strong>EVENTS:</strong> Registering and management of participants (Art. 6.1 a & f GDPR).</li>
+      </ul>
+
+      <h4>Storage</h4>
+      <p>NEXIO will store the data during their relationship with the organization and thereafter according to applicable archive regulations.</p>
+
       <h4>Rights</h4>
-      <p>You have the right to access, rectify, and delete your data. Contact us at contact@team-nexio.com.</p>
+      <p>You may exercise rights of access, rectification, deletion, limitation, objection, and portability by writing to contact@team-nexio.com. You also have the right to file a complaint with the competent Control Authority.</p>
+      
+      <p><em>Latest update: 27, March of 2025.</em></p>
     `;
     modal.style.display = "block";
   });
@@ -232,13 +253,23 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     modalTitle.textContent = "Cookies Policy";
     modalBody.innerHTML = `
+      <p>The JUNIOR ENTERPRISE STUDENT ASSOCIATION Nexio (hereinafter, Nexio) would like to inform you about the use of cookies on its websites.</p>
+      
       <h4>What are cookies?</h4>
-      <p>Cookies are small files downloaded to your device to improve browsing habit recognition and service performance.</p>
-      <h4>Type of cookies used</h4>
+      <p>Cookies are files that can be downloaded onto your device through web pages. They allow a website to store and retrieve information about a user’s or device’s browsing habits.</p>
+
+      <h4>Types of Cookies used</h4>
       <ul>
-        <li>Technical cookies: Essential for website functionality.</li>
-        <li>Analytical cookies: For visit duration and frequency data.</li>
+        <li><strong>Technical cookies:</strong> Essential for functionality.</li>
+        <li><strong>Personalization cookies:</strong> To remember preferences.</li>
+        <li><strong>Analytical cookies:</strong> For statistical data like number of users and duration of visits.</li>
       </ul>
+
+      <h4>Cookies Exempt from Consent</h4>
+      <p>Certain technical cookies serving communication or specific requested services are exempt from explicit consent requirements under Art. 22.2 of Law 34/2002.</p>
+
+      <h4>How to Modify Settings</h4>
+      <p>You can restrict, block, or delete cookies through your browser settings (Chrome, Firefox, Safari, Edge).</p>
     `;
     modal.style.display = "block";
   });
