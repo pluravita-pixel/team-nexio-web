@@ -298,14 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modalBody.innerHTML = `
       <p>The JUNIOR ENTERPRISE STUDENT ASSOCIATION Nexio (hereinafter, Nexio) would like to inform you about the use of cookies on its websites.</p>
       
-      <h4>What are cookies?</h4>
-      <p>Cookies are files that can be downloaded onto your device through web pages. They allow a website to store and retrieve information about a user’s or device’s browsing habits.</p>
-
-      <h4>Types of Cookies used</h4>
-      <ul>
-        <li><strong>Technical cookies:</strong> Essential for functionality.</li>
-        <li><strong>Personalization cookies:</strong> To remember preferences.</li>
-        <li><strong>Analytical cookies:</strong> For statistical data like number of users and duration of visits.</li>
       </ul>
 
       <h4>Cookies Exempt from Consent</h4>
