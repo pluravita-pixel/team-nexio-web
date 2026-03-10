@@ -227,22 +227,65 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     modalTitle.textContent = "Privacy Policy";
     modalBody.innerHTML = `
-      <h4>Identification of the data controller</h4>
+      <h4>Identification of the data controller:</h4>
       <p>Asociación Estudiantil Junior Empresa NEXIO (hereinafter “NEXIO”) with NIF ID G75579508 and domicile in Paseo Uribitarte 6, 48001 Bilbao (Bizkaia). Contact: contact@team-nexio.com</p>
 
-      <h4>Purpose and Legitimacy</h4>
-      <p>NEXIO processes personal data for the following purposes:</p>
-      <ul>
-        <li><strong>MEMBERS:</strong> Management of personal data of members (Art. 6.1 b GDPR).</li>
-        <li><strong>CONTACT PEOPLE:</strong> Management of the contacts database (Art. 6.1 f GDPR).</li>
-        <li><strong>EVENTS:</strong> Registering and management of participants (Art. 6.1 a & f GDPR).</li>
-      </ul>
+      <h4>Who is responsible for the processing of your data?</h4>
+      <p>This privacy policy applies to all personal data that the data subject provides to NEXIO, as well as to any natural person interested in the activities and services that NEXIO offers through its web pages and through any other means of communication. The purpose of NEXIO’s Privacy Policy is to give transparency to information on how we process your personal data in compliance with the current data protection regulations.</p>
 
-      <h4>Storage</h4>
-      <p>NEXIO will store the data during their relationship with the organization and thereafter according to applicable archive regulations.</p>
+      <h4>For what purpose do we process your personal data and with what legitimacy?</h4>
+      <p>NEXIO has a Record of Processing Activities where each of the following processing carried out as the data controller are detailed:</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse: collapse; margin-top: 1rem; color: var(--text-gray); font-size: 0.85rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <th style="padding: 0.5rem; text-align: left;">PROCESSING</th>
+              <th style="padding: 0.5rem; text-align: left;">PURPOSE</th>
+              <th style="padding: 0.5rem; text-align: left;">LEGITIMATE BASIS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 0.5rem;">MEMBERS</td>
+              <td style="padding: 0.5rem;">Management of personal data of members</td>
+              <td style="padding: 0.5rem;">Art. 6.1 b) Contract performance</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 0.5rem;">CONTACT PEOPLE</td>
+              <td style="padding: 0.5rem;">Contacts database management</td>
+              <td style="padding: 0.5rem;">Art. 6.1 f) Legitimate interest</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 0.5rem;">EVENTS</td>
+              <td style="padding: 0.5rem;">Management of participants</td>
+              <td style="padding: 0.5rem;">Art. 6.1 a) Consent / Art. 6.1 f) Legitimate interest</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass);">
+              <td style="padding: 0.5rem;">ACCOUNTABILITY</td>
+              <td style="padding: 0.5rem;">Administrative management</td>
+              <td style="padding: 0.5rem;">Art. 6.1 b) Contract performance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h4>Rights</h4>
-      <p>You may exercise rights of access, rectification, deletion, limitation, objection, and portability by writing to contact@team-nexio.com. You also have the right to file a complaint with the competent Control Authority.</p>
+      <h4>How long do we store your personal data?</h4>
+      <p>NEXIO will store the data of the data subjects during their relationship with the organization and thereafter, according to the provisions of the archive and documentation regulations.</p>
+
+      <h4>Who has access to your personal data?</h4>
+      <p>NEXIO may make transfers or communications of personal data in order to meet its obligations with the Public Administrations.</p>
+
+      <h4>What are the rights of those affected?</h4>
+      <p>Right of access, rectification, deletion, limitation, objection, and portability. Such rights may be exercised free of charge by written request addressed to nexiocoop@gmail.com.</p>
+
+      <h4>Unsubscribe from commercial communications</h4>
+      <p>The interested party has the right to revoke consent at any time through the link in each communication or by statement to contact@team-nexio.com.</p>
+
+      <h4>What security measures do we have implemented?</h4>
+      <p>NEXIO adopts necessary measures to avoid alteration, loss, treatment or unauthorized access, in accordance with applicable regulations.</p>
+
+      <h4>Modification of the Privacy Policy</h4>
+      <p>NEXIO may modify its Privacy Policy in accordance with the applicable law at any time.</p>
       
       <p><em>Latest update: 27, March of 2025.</em></p>
     `;
