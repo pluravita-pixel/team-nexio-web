@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXIO - Innovation & Impact</title>
+  <meta name="description"
+    content="NEXIO is a dynamic team of young multicultural entrepreneurs driving innovation and impact." />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <div class="logo nexio-title">
+        <span>NEXIO</span>
+      </div>
+      <div class="nav-links">
+        <a href="#vision" data-i18n="nav-vision">Vision</a>
+        <a href="#projects" data-i18n="nav-projects">Projects</a>
+        <a href="#members" data-i18n="nav-members">Members</a>
+        <a href="#contact" data-i18n="nav-contact">Contact</a>
+        <select class="lang-switcher" id="lang-switcher">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="de">DE</option>
+          <option value="ko">KO</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="app">
+    <!-- Section Intro (Hero) -->
+    <section class="hero" id="home">
+      <div class="container reveal">
+        <h1 class="hero-title nexio-title">
+          <span data-i18n="hero-title-part1">Visionary</span><br />
+          <span class="gradient-text" data-i18n="hero-title-part2">Architects</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle">
+          A multicultural team of 8 young entrepreneurs building the future of innovation.
+        </p>
+        <div class="hero-btns">
+          <a href="https://www.linkedin.com/company/team-nexio/" target="_blank" class="premium-btn">
+            <i class="fab fa-linkedin"></i> <span data-i18n="hero-linkedin">Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision">
+      <div class="container reveal">
+        <h2 class="section-title" data-i18n="vision-title">Our Vision</h2>
+        <div class="vision-grid">
+          <div class="vision-card">
+            <h3 data-i18n="vision-innovation-title">Innovation</h3>
+            <p data-i18n="vision-innovation-desc">Creative and forward-thinking solutions that challenge the status quo.
+            </p>
+          </div>
+          <div class="vision-card">
+            <h3 data-i18n="vision-collaboration-title">Collaboration</h3>
+            <p data-i18n="vision-collaboration-desc">Leveraging diverse perspectives and teamwork to achieve greatness.
+            </p>
+          </div>
+          <div class="vision-card">
+            <h3 data-i18n="vision-impact-title">Impact</h3>
+            <p data-i18n="vision-impact-desc">Driving positive change in every community we touch.</p>
+          </div>
+        </div>
+        <div class="journey-info">
+          <p data-i18n="vision-journey">Based in Bilbao (MTA Lab) → Berlin (2025-2026) → Seoul.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container reveal">
+        <h2 class="section-title" data-i18n="projects-title">Active Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Euskorea</h3>
+            <p data-i18n="project-euskorea-desc">The bridge between Basque and Korean cultures. K-Pop, food, and beauty.
+            </p>
+            <a href="https://euskorea.com/" target="_blank" class="project-link">euskorea.com</a>
+          </div>
+          <div class="project-card">
+            <h3>Togles</h3>
+            <p data-i18n="project-togles-desc">No-code development agency building digital solutions with speed and
+              precision.</p>
+          </div>
+          <div class="project-card">
+            <h3>Bloom</h3>
+            <p data-i18n="project-bloom-desc">Marketing and automation agency specializing in digital growth for SMEs.
+            </p>
+          </div>
+          <div class="project-card">
+            <h3>NIEM</h3>
+            <p data-i18n="project-niem-desc">Global event organization project collaborating with charities for social
+              impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members">
+      <div class="container reveal">
+        <h2 class="section-title" data-i18n="members-title">The Team</h2>
+        <div class="members-grid" id="members-list">
+          <!-- Members will be loaded by JS for easy management -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container reveal">
+        <h2 class="section-title" data-i18n="contact-title">Get in Touch</h2>
+        <p class="contact-text" data-i18n="contact-desc">Interested in collaborating or have a question? Drop us an
+          email.</p>
+        <a href="mailto:contact@team-nexio.com" class="contact-email">contact@team-nexio.com</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo logo nexio-title"><span>NEXIO</span></div>
+      <p>&copy; 2025 ASOCIACION ESTUDIANTIL JUNIOR NEXIO. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#" id="legal-link" data-i18n="legal-notice">Legal Notice</a>
+        <a href="#" id="privacy-link" data-i18n="legal-privacy">Privacy Policy</a>
+        <a href="#" id="cookies-link" data-i18n="legal-cookies">Cookies Policy</a>
+      </div>
+      <div class="linkedin-footer">
+        <a href="https://www.linkedin.com/company/team-nexio/" target="_blank">LinkedIn Profile</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Legal Modal -->
+  <div id="legal-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body" class="modal-body-text"></div>
+    </div>
+  </div>
+
+  <!-- Cookie Consent -->
+  <div id="cookie-banner" class="cookie-overlay">
+    <div class="cookie-content">
+      <h3 data-i18n="cookie-title">Cookies Consent</h3>
+      <p data-i18n="cookie-text">We use cookies to improve your experience. You must accept our cookies policy to
+        navigate the website.</p>
+      <div class="cookie-btns">
+        <button id="accept-cookies" class="premium-btn small" data-i18n="cookie-accept">Accept All</button>
+        <button id="decline-cookies" class="outline-btn small" data-i18n="cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
