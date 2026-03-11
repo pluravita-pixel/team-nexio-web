@@ -79,14 +79,14 @@ nav .container {
 .logo {
     font-size: 1.8rem;
     letter-spacing: -1px;
+    display: flex;
+    align-items: center;
 }
 
 .logo span {
-    background: var(--gradient-nexio);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary-pink);
     position: relative;
+    font-weight: 900;
 }
 
 .logo span::after {
@@ -94,6 +94,11 @@ nav .container {
     font-family: 'Inter', sans-serif;
     color: var(--primary-pink);
     font-weight: 900;
+}
+
+.footer-logo {
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .nav-links {
@@ -546,6 +551,37 @@ footer {
     padding: 2rem;
     border-left: 4px solid var(--primary-pink);
     background: var(--glass-effect);
+}
+
+
+/* Pulsing and Blinking Animations for Map */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes pulse-strong {
+  0%, 100% { opacity: 0.6; transform: scale(1); filter: blur(0px); }
+  50% { opacity: 1; transform: scale(1.4); filter: blur(2px); }
+}
+
+@keyframes random-blink {
+  0%, 100% { opacity: 0.3; }
+  10%, 90% { opacity: 0.8; }
+  20%, 80% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s infinite ease-in-out;
+}
+
+.animate-pulse-strong {
+  animation: pulse-strong 1s infinite ease-in-out;
+}
+
+.animate-random-blink {
+  animation: random-blink 5s infinite linear;
 }
 
 @media (max-width: 768px) {

@@ -1,7 +1,11 @@
+import * as d3 from 'd3';
+import * as topojson from 'topojson-client';
+
 const translations = {
   en: {
     "nav-vision": "Vision",
     "nav-projects": "Projects",
+    "nav-journey": "Journey",
     "nav-members": "Members",
     "nav-contact": "Contact",
     "hero-title-part1": "Visionary",
@@ -31,11 +35,13 @@ const translations = {
     "cookie-title": "Cookies Consent",
     "cookie-text": "We use cookies to improve your experience. You must accept our cookies policy to navigate the website.",
     "cookie-accept": "Accept All",
-    "cookie-decline": "Decline"
+    "cookie-decline": "Decline",
+    "map-title": "Global Presence"
   },
   es: {
     "nav-vision": "Visión",
     "nav-projects": "Proyectos",
+    "nav-journey": "Trayectoria",
     "nav-members": "Miembros",
     "nav-contact": "Contacto",
     "hero-title-part1": "Arquitectos",
@@ -65,11 +71,13 @@ const translations = {
     "cookie-title": "Consentimiento de Cookies",
     "cookie-text": "Utilizamos cookies para mejorar tu experiencia. Debes aceptar nuestra política de cookies para navegar por la web.",
     "cookie-accept": "Aceptar Todo",
-    "cookie-decline": "Denegar"
+    "cookie-decline": "Denegar",
+    "map-title": "Presencia Global"
   },
   de: {
     "nav-vision": "Vision",
     "nav-projects": "Projekte",
+    "nav-journey": "Reise",
     "nav-members": "Mitglieder",
     "nav-contact": "Kontakt",
     "hero-title-part1": "Visionäre",
@@ -99,11 +107,13 @@ const translations = {
     "cookie-title": "Cookie-Einwilligung",
     "cookie-text": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Sie müssen unserer Cookie-Richtlinie zustimmen, um die Website zu nutzen.",
     "cookie-accept": "Alle akzeptieren",
-    "cookie-decline": "Ablehnen"
+    "cookie-decline": "Ablehnen",
+    "map-title": "Globale Präsenz"
   },
   ko: {
     "nav-vision": "비전",
     "nav-projects": "프로젝트",
+    "nav-journey": "여정",
     "nav-members": "멤버",
     "nav-contact": "문의",
     "hero-title-part1": "선구적인",
@@ -133,7 +143,8 @@ const translations = {
     "cookie-title": "쿠키 동의",
     "cookie-text": "귀하의 경험을 개선하기 위해 쿠키를 사용합니다. 웹사이트를 이용하려면 쿠키 정책에 동의해야 합니다.",
     "cookie-accept": "모두 수락",
-    "cookie-decline": "거부"
+    "cookie-decline": "거부",
+    "map-title": "글로벌 프레즌스"
   }
 };
 
@@ -147,6 +158,111 @@ const members = [
   { name: "Monyake", email: "monyake@team-nexio.com" },
   { name: "Pau", email: "pau@team-nexio.com" }
 ];
+
+async function initTeamMap() {
+  const container = document.getElementById('team-map');
+  if (!container) return;
+
+  const width = container.offsetWidth;
+  const height = container.offsetHeight;
+
+  const svg = d3.select("#team-map")
+    .append("svg")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .style("background", "transparent");
+
+  const projection = d3.geoNaturalEarth1()
+    .scale(width / 5.5)
+    .translate([width / 2, height / 2]);
+
+  const path = d3.geoPath().projection(projection);
+
+  try {
+    const world = await d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json");
+    const countries = topojson.feature(world, world.objects.countries).features;
+
+    svg.append("g")
+      .selectAll("path")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("fill", "#1a1a1a")
+      .attr("stroke", "#333")
+      .attr("stroke-width", 0.5);
+
+    const bilbao = projection([-2.935, 43.263]);
+    const berlin = projection([13.405, 52.52]);
+    const seoul = projection([126.978, 37.566]);
+
+    // Add dashed lines with dynamic similar curves
+    const addCurve = (p1, p2) => {
+      // Calculate distance between points
+      const dx = p2[0] - p1[0];
+      const dy = p2[1] - p1[1];
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      
+      // Dynamic offset based on distance for similar curvature
+      const offset = dist * 0.25;
+      
+      const cx = (p1[0] + p2[0]) / 2;
+      const cy = (p1[1] + p2[1]) / 2 - offset;
+      
+      svg.append("path")
+        .attr("d", `M ${p1[0]} ${p1[1]} Q ${cx} ${cy} ${p2[0]} ${p2[1]}`)
+        .attr("fill", "none")
+        .attr("stroke", "var(--primary-pink)")
+        .attr("stroke-width", 2)
+        .attr("stroke-dasharray", "5,5")
+        .style("opacity", 0.7);
+    };
+
+    addCurve(bilbao, berlin);
+    addCurve(berlin, seoul);
+
+    // Locations
+    const locations = [
+      { name: "Seoul", coords: [126.978, 37.566], color: "var(--primary-pink)" },
+      { name: "Bilbao", coords: [-2.935, 43.263], color: "var(--primary-pink)" },
+      { name: "Berlin", coords: [13.405, 52.52], color: "var(--primary-pink)" }
+    ];
+
+    const pins = svg.append("g")
+      .selectAll("g")
+      .data(locations)
+      .enter()
+      .append("g")
+      .attr("transform", d => `translate(${projection(d.coords)})`);
+
+    // Outer glow pulse
+    pins.append("circle")
+      .attr("r", 8)
+      .attr("fill", d => d.color)
+      .attr("class", "animate-pulse-soft");
+
+    // Inner point
+    pins.append("circle")
+      .attr("r", 4)
+      .attr("fill", "white")
+      .attr("stroke", d => d.color)
+      .attr("stroke-width", 2);
+
+    // Labels
+    pins.append("text")
+      .attr("dy", -12)
+      .attr("text-anchor", "middle")
+      .attr("fill", "white")
+      .attr("font-size", "10px")
+      .attr("font-weight", "600")
+      .style("pointer-events", "none")
+      .text(d => d.name);
+
+  } catch (error) {
+    console.error("Error loading map:", error);
+  }
+}
 
 function updateLanguage(lang) {
   const elements = document.querySelectorAll("[data-i18n]");
@@ -182,6 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
   switcher.value = savedLang;
   updateLanguage(savedLang);
   loadMembers();
+  initTeamMap();
 
   switcher.addEventListener("change", (e) => {
     const lang = e.target.value;
