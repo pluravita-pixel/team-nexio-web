@@ -60,11 +60,11 @@ section {
 
 /* Navbar */
 nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
-    padding: 1.5rem 0;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 1.2rem 0;
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--border-glass);
@@ -137,12 +137,13 @@ nav .container {
 
 /* Hero Styles */
 .hero {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: radial-gradient(circle at center, #111 0%, #000 70%);
+    padding: 4rem 0; /* Add padding to prevent content from touching edges */
 }
 
 .hero-title {
