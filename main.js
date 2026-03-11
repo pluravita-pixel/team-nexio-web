@@ -323,26 +323,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Cookie Consent Logic
-  const cookieBanner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("accept-cookies");
-  const declineBtn = document.getElementById("decline-cookies");
+  // Consent Logic
+  const consentBanner = document.getElementById("p-consent-wrapper");
+  const acceptBtn = document.getElementById("accept-consent");
+  const declineBtn = document.getElementById("decline-consent");
 
-  if (!localStorage.getItem("nexio-cookies-accepted")) {
-    cookieBanner.classList.remove("cookie-hide");
-    document.body.classList.add("body-locked");
+  if (!localStorage.getItem("nexio-consent-given")) {
+    consentBanner.classList.remove("p-consent-hide");
   } else {
-    cookieBanner.classList.add("cookie-hide");
+    consentBanner.classList.add("p-consent-hide");
   }
 
   acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("nexio-cookies-accepted", "true");
-    cookieBanner.classList.add("cookie-hide");
-    document.body.classList.remove("body-locked");
+    localStorage.setItem("nexio-consent-given", "true");
+    consentBanner.classList.add("p-consent-hide");
   });
 
   declineBtn.addEventListener("click", () => {
-    alert("You must accept cookies to view the website content.");
-    window.location.href = "https://google.com"; // Block access as requested
+    localStorage.setItem("nexio-consent-given", "false"); // Store preference but don't block
+    consentBanner.classList.add("p-consent-hide");
+    console.log("Consent declined. Some features may be limited.");
   });
 });
